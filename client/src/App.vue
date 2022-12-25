@@ -1,13 +1,15 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <RouterView />
+  <v-app>
+    <PageHeader />
+    <v-main>
+      <v-container fluid>
+        <router-view />
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
-<style scoped>
-
-
-</style>
+<script setup>
+import { RouterLink, RouterView } from "vue-router";
+import PageHeader from "./components/Header.vue";
+</script>
