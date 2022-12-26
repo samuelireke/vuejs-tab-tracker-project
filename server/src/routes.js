@@ -1,8 +1,12 @@
-const authController = require('./controllers/authController')
-const authControllerPolicy = require('./policies/authControllerPolicy')
+const authController = require("./controllers/authController");
+const authControllerPolicy = require("./policies/authControllerPolicy");
 
 module.exports = (app) => {
-    app.post('/register',
-    authControllerPolicy.register,
-    authController.register)
-    }
+  app.post("/register", authControllerPolicy.register, authController.register);
+
+  app.post(
+    "/login",
+    // authControllerPolicy.login,
+    authController.login
+  );
+};

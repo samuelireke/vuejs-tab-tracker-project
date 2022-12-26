@@ -10,7 +10,7 @@
         >
           <v-toolbar title="Register" flat dense color="cyan" dark></v-toolbar>
           <v-card-text>
-            <v-form @submit.prevent>
+            <v-form @submit.prevent name="tab-tracker-form" autocomplete="off">
               <v-text-field
                 label="email"
                 name="email"

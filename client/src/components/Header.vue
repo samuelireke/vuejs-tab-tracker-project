@@ -1,34 +1,40 @@
 <template>
-  <!-- <nav class="header">
-    <span class="material-icons">menu</span>
-    <div>
-        <h1>TabTracker</h1>
-    </div>
-    <div class="signup-btn">
-        <button>SIGN UP</button>
-    </div>
-  </nav> -->
+  <v-toolbar prominent fixed color="cyan">
+    <v-toolbar-title class="mr-4">
+      <span class="page-title" @click="navigateTo({ name: 'home' })"
+        >Tab Tracker</span
+      >
+    </v-toolbar-title>
 
-  <v-toolbar fixed color="cyan">
-    <v-toolbar-title class="mr-4">Tab Tracker</v-toolbar-title>
+    <!-- TODO -->
+    <!-- <v-toolbar-items>
+      <v-btn flat dark> Browse </v-btn>
+    </v-toolbar-items> -->
+
+    <v-spacer></v-spacer>
+    <!-- Log in & sign up -->
+    <v-toolbar-items>
+      <v-btn flat dark class="mr-3" @click="navigateTo({ name: 'login' })">
+        Log In
+      </v-btn>
+      <v-btn flat dark class="mr-3" @click="navigateTo({ name: 'register' })">
+        Sign Up
+      </v-btn>
+    </v-toolbar-items>
   </v-toolbar>
 </template>
 
-<script>
-export default {};
+<script setup>
+import { useRouter } from "vue-router";
+const router = useRouter();
+const navigateTo = (link) => router.push(link);
 </script>
 
 <style scoped>
-nav {
-  background-color: cyan;
-  display: flex;
-  flex-direction: row;
-  height: 10vh;
-  gap: 1rem;
-  align-items: baseline;
+.page-title {
+  cursor: pointer;
 }
-
-#signup-btn {
-  align-items: right;
+.page-title:hover {
+  color: rgb(5, 122, 122);
 }
 </style>
